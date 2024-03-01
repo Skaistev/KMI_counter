@@ -5,7 +5,7 @@ const answerRowDOM = document.querySelector(".answer-row")
 const answerDOM = document.querySelector(".answer")
 const btnClearDOM = document.getElementById("clear")
 
-console.log(btnClearDOM);
+console.log(answerRowDOM);
 
 
 function kmiCount (){
@@ -30,7 +30,7 @@ if (heightDOM.value>260||heightDOM.value<1){
 if(kmi<=18.5){
 
   ats = "Your weigth is poor. Go eat something!"
-  answerRowDOM.classList.add('yellow');
+   answerRowDOM.classList.add('yellow');
 
 }else 
 if (kmi>18.5 && kmi<=24.9){
@@ -56,7 +56,8 @@ btnClearDOM.style = "display:inline"
 }
   
 function clearButton () {
-    answerRowDOM.innerHTML =`<button style="display:none" id="clear" class="btn">Clear</button>`;
+    answerRowDOM.innerHTML = `<div></div>`
+    btnClearDOM.style = "display:none"
 }
 
 btnCountDOM.addEventListener("click", kmiCount);
