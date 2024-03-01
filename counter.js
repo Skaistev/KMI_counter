@@ -5,6 +5,8 @@ const answerRowDOM = document.querySelector(".answer-row")
 const answerDOM = document.querySelector(".answer")
 const btnClearDOM = document.getElementById("clear")
 
+console.log(answerRowDOM);
+
 
 
 
@@ -41,7 +43,7 @@ if (kmi>18.5 && kmi<=24.9){
     answerRowDOM.classList.add('green');
 
 }else 
-if(kmi>=25&&kmi<29.9){
+if(kmi>=25 && kmi<29.9){
     ats = "Your weigth is rather big... Go do some sport activities and eat more vegetables!"
     answerRowDOM.classList.add('orange');
 
