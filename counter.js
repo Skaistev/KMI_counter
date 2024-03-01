@@ -5,7 +5,7 @@ const answerRowDOM = document.querySelector(".answer-row")
 const answerDOM = document.querySelector(".answer")
 const btnClearDOM = document.getElementById("clear")
 
-console.log(answerRowDOM);
+
 
 
 function kmiCount (){
@@ -14,16 +14,19 @@ const kmi = ((weightDOM.value/((heightDOM.value)/100)))/(heightDOM.value/100);
 
 let ats = ''
 if (kmi===Infinity){
-    return answerRowDOM.innerHTML = `<p class="answer">Įvesti neteisingi duomenys/duomenų nėra</p>`
-// <button id="clear" class="btn">Clear</button>`
+    btnClearDOM.style = "display:inline"
+    return answerRowDOM.innerHTML = `<p class="answer">Ivalid data/no data entered</p>`
+
 }
 if (weightDOM.value>250||weightDOM.value<1){
-    return answerRowDOM.innerHTML = `<p class="answer">Įvesti neteisingi duomenys/duomenų nėra</p>`
-// <button id="clear" class="btn">Clear</button>`
+    btnClearDOM.style = "display:inline"
+    return answerRowDOM.innerHTML = `<p class="answer">Ivalid data/no data entered</p>`
+
 }
 if (heightDOM.value>260||heightDOM.value<1){
-    return answerRowDOM.innerHTML = `<p class="answer">Įvesti neteisingi duomenys/duomenų nėra</p>`
-// <button id="clear" class="btn">Clear</button>`
+    btnClearDOM.style = "display:inline"
+    return answerRowDOM.innerHTML = `<p class="answer">Ivalid data/no data entered</p>`
+
 }
 
 
@@ -51,13 +54,15 @@ if (kmi>=30){
 answerRowDOM.innerHTML = `<p class="answer">Your KMI is ${kmi.toFixed(2)}. ${ats}</p>`
 btnClearDOM.style = "display:inline"
 
-// <button id="clear" class="btn">Clear</button>`
+
 
 }
   
 function clearButton () {
     answerRowDOM.innerHTML = `<div></div>`
     btnClearDOM.style = "display:none"
+    weightDOM.value = '';
+    heightDOM.value = '';
 }
 
 btnCountDOM.addEventListener("click", kmiCount);
