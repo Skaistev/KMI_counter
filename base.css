@@ -51,3 +51,16 @@ h1 {
     border: 2px black solid; 
     width: 400px;
 }
+.yellow {
+    color: rgb(156, 156, 36);
+}
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+.orange {
+    color: orange;
+
+}
