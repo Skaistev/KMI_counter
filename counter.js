@@ -11,7 +11,21 @@ console.log(btnClearDOM);
 function kmiCount (){
 
 const kmi = ((weightDOM.value/((heightDOM.value)/100)))/(heightDOM.value/100);
+
 let ats = ''
+if (kmi===Infinity){
+    return answerRowDOM.innerHTML = `<p class="answer">Įvesti neteisingi duomenys/duomenų nėra</p>`
+// <button id="clear" class="btn">Clear</button>`
+}
+if (weightDOM.value>250||weightDOM.value<1){
+    return answerRowDOM.innerHTML = `<p class="answer">Įvesti neteisingi duomenys/duomenų nėra</p>`
+// <button id="clear" class="btn">Clear</button>`
+}
+if (heightDOM.value>260||heightDOM.value<1){
+    return answerRowDOM.innerHTML = `<p class="answer">Įvesti neteisingi duomenys/duomenų nėra</p>`
+// <button id="clear" class="btn">Clear</button>`
+}
+
 
 if(kmi<=18.5){
 
@@ -30,18 +44,19 @@ if(kmi>=25&&kmi<29.9){
 
 }else
 if (kmi>=30){
-    ats = "Don't panic! Your weight is too big for human being. Try change your habits and hit into healhier way of living."
+    ats = "Don't panic! Your weight is too big for human being. Try change your habits and hit into healther way of living."
     answerRowDOM.classList.add('red');
 }
-return answerRowDOM.innerHTML = `<p class="answer">Your KMI is ${kmi.toFixed(2)}. ${ats}</p>
-<button id="clear" class="btn">Clear</button>`
+
+answerRowDOM.innerHTML = `<p class="answer">Your KMI is ${kmi.toFixed(2)}. ${ats}</p>`
+btnClearDOM.style = "display:inline"
+
+// <button id="clear" class="btn">Clear</button>`
 
 }
   
 function clearButton () {
-    
-    weightDOM.value = 0;
-    heightDOM.value = 0;
+    answerRowDOM.innerHTML =`<button style="display:none" id="clear" class="btn">Clear</button>`;
 }
 
 btnCountDOM.addEventListener("click", kmiCount);
